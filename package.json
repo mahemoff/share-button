@@ -42,6 +42,7 @@
     "gulp-rename": "latest",
     "gulp-uglify": "latest",
     "gulp-wrap-umd": "latest",
+    "selenium-webdriver": "^2.46.1",
     "should": "latest",
     "stylus": "latest",
     "when": "latest",
