@@ -1,4 +1,4 @@
-You can pass an options object when you call `Share` on an element to make things a little more flexible.
+You can pass an options object when you call `ShareButton` on an element to make things a little more flexible.
 
 Passing configuration options:
 
@@ -11,7 +11,7 @@ config = {
     }
 }
 
-var share = new Share('.share-button', config);
+var shareButton = new ShareButton(config);
 ```
 
 All options:
