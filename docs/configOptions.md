@@ -1,3 +1,5 @@
+# Configuration Options
+
 You can pass an options object when you call `ShareButton` on an element to make things a little more flexible.
 
 Passing configuration options:

@@ -597,22 +597,6 @@ class ShareButton extends ShareUtils {
   }
 
   /**
-   * @method _injectStylesheet
-   * @description Inject link to stylesheet
-   * @private
-   *
-   * @param {String} url
-   */
-  _injectStylesheet(url) {
-    if (!this.el.head.querySelector(`link[href='${url}']`)) {
-      let link = document.createElement("link");
-      link.setAttribute("rel", "stylesheet");
-      link.setAttribute("href", url);
-      this.el.head.appendChild(link);
-    }
-  }
-
-  /**
    * @method _injectHtml
    * @description Inject button structure
    * @private
