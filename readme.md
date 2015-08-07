@@ -26,7 +26,7 @@ Let's take a quick look at the alternative, using this little plugin:
 4. It's tiny and compact, expanding only when the user actually wants to share something.
 
 # Getting Started
-1. [Download the script](https://github.com/carrot/share-button/releases/download/v1.0.0/ShareButton.min.js) and include it on your page.
+1. [Download the script](https://github.com/carrot/share-button/releases/tag/v1.0.0) and include it on your page.
 2. Make a `share-button` element on your page
 3. In your javascript, call `new ShareButton()`
 4. Pass options to the share call if you want (details below)
@@ -48,13 +48,13 @@ new ShareButton({
 
 # Customization
 ## Configuration Options
-The share button is extremely flexible. As such we provide the ability to pass a wide array of options for additional configuration. All configuration options are available here: [Configuration Options](https://github.com/carrot/share-button/wiki/Configuration-Options)
+The share button is extremely flexible. As such we provide the ability to pass a wide array of options for additional configuration. All configuration options are available here: [Configuration Options](/docs/configOptions.md)
 
 ## Styles
-Additionally, you're able to customize the look and feel of the button and animations though CSS. All CSS styles and how to modify them are available here: [CSS Styles](https://github.com/carrot/share-button/wiki/CSS-Styles)
+Additionally, you're able to customize the look and feel of the button and animations though CSS. All CSS styles and how to modify them are available here: [CSS Styles](/docs/styles.md)
 
 ## Hooks
-You are able to set `before` and `after` hooks when a user clicks a network. This allows you to dynamically change attributes for that button. For more information: [click here](https://github.com/carrot/share-button/wiki/Network-Hooks)
+You are able to set `before` and `after` hooks when a user clicks a network. This allows you to dynamically change attributes for that button. For more information: [click here](/docs/networkHooks.md)
 
 # Public API
 The share button also returns a simple API that can be used to control it should you need to. Example shown below:
