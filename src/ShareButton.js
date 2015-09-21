@@ -627,7 +627,14 @@ class ShareButton extends ShareUtils {
     for (let network of networks) {
       networkList += `<li class='${network}' data-network='${network}'><a></a></li>`;
     }
-    instance.innerHTML = `${this.config.ui.buttonText}<div class='${this.config.ui.namespace}social load ${this.config.ui.flyout}'><ul>` + networkList + `</ul></div>`;
+
+   // Configure buttonText as false to leave button text alone
+    var buttonText = this.config.ui.buttonText;
+    if (buttonText==false) {
+      buttonText = instance.innerHTML;
+    }
+
+    instance.innerHTML = `${buttonText}<div class='${this.config.ui.namespace}social load ${this.config.ui.flyout}'><ul>` + networkList + `</ul></div>`;
   }
 
   /**
