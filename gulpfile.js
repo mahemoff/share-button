@@ -2,38 +2,41 @@ var gulp = require('gulp');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var accord = require('gulp-accord');
-var minifyCss = require('gulp-minify-css');
 var browserify = require('gulp-browserify');
+var shell = require('gulp-shell');
 var del = require('del');
 var autoprefixer = require('autoprefixer-stylus');
 var axis = require('axis');
+var poststylus = require('poststylus');
+var postcssSVG = require('postcss-svg');
 
-gulp.task('clean', function() {
-    del(['dist/*[.js, .css]']);
+gulp.task('unbuild', function() {
+    del(['dist']);
 });
 
-gulp.task('style', ['clean'], function() {
+gulp.task('style', function() {
   var styleShareButton = gulp
-    .src('src/styles.styl')
+    .src('src/share-button.styl')
     .pipe(accord('stylus', {
-      use: [autoprefixer(), axis()]
+      use: [
+        autoprefixer(),
+        axis(),
+        poststylus([postcssSVG({ paths: ['./src/svg' ]})])
+      ]
     }))
     .pipe(gulp.dest('dist/'))
-    .pipe(minifyCss())
-    .pipe(rename({
-      suffix: '.min'
-    }))
-    .pipe(gulp.dest('dist/'));
+    .pipe(shell(
+      ['node_modules/.bin/minify --output dist/share-button.min.css dist/share-button.css']
+    ))
 });
 
-gulp.task('script', ['clean'], function() {
+gulp.task('script', function() {
     var umdShareButton = gulp
-        .src(['src/ShareButton.js'], { read: false })
+        .src(['src/share-button.js'], { read: false })
         .pipe(browserify({
           transform: ['babelify'],
           standalone: 'ShareButton'
         }))
-        .pipe(rename('ShareButton.js'))
         .pipe(gulp.dest('dist/'))
         .pipe(uglify())
         .pipe(rename({ suffix: '.min' }))
