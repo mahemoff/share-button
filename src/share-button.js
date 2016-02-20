@@ -632,7 +632,7 @@ class ShareButton extends ShareUtils {
 
    // Configure buttonText as false to leave button text alone
     var buttonText = this.config.ui.buttonText;
-    if (buttonText==false) {
+    if (buttonText == false) {
       buttonText = instance.innerHTML;
     }
 
